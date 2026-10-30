@@ -1,0 +1,830 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Irinos Cafe, kebab &amp; wrap café in Northampton</title>
+<meta name="description" content="Lithuanian kebabs, shawarma wraps, chebureki, freshly made doughnuts and coffee at 37 Kettering Rd, Northampton. Rated 4.5 from 234 Google reviews.">
+<meta property="og:title" content="Irinos Cafe, kebab &amp; wrap café in Northampton">
+<meta property="og:description" content="Lithuanian kebabs, shawarma wraps, chebureki, doughnuts and coffee at 37 Kettering Rd, Northampton.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#b0341c">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23232628'/%3E%3Ctext x='33' y='47' font-family='Georgia,serif' font-style='italic' font-size='42' fill='%23f3ece0' text-anchor='middle'%3EI%3C/text%3E%3Ccircle cx='46' cy='46' r='4' fill='%23d4532f'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;1,9..144,400&amp;family=Instrument+Sans:wght@400;600&amp;display=swap" rel="stylesheet">
+<style>
+/* ==========================================================================
+   DESIGN DECISIONS — Irinos Cafe, 37 Kettering Rd, Northampton
+   Direction: WARM ARTISAN, fully committed. A small Lithuanian-run kebab café,
+   so the site should feel like their counter: wrap paper, slate boards, dark
+   wood, Edison bulbs — not a chain takeaway template.
+   Palette (pulled from the photos):
+     --bg      wrap-paper cream (the paper sleeves around the shawarma)
+     --surface a deeper parchment for the visit block
+     --ink     slate-board charcoal; --char = the café's painted wall
+     --brand   chilli/tomato red (the striped straw, the prices on the boards)
+               — the ONE strong colour move: the doughnut panel, CTAs, italics
+     --accent  grill-mark toast, used only on charcoal
+   Type: Fraunces (optical-size soft serif: 500 roman + 400 italic for the voice)
+         with Instrument Sans 400/600 for body and small-caps style labels.
+   Hero: split editorial — oversized three-line headline taken from a review
+         ("worth the drive"), framed wrap photo on a charcoal slab, rating up top.
+   Signature: a slow marquee of verbatim review lines on charcoal, right under
+         the hero, plus a live "open now" read-out in the visit block.
+   Rhythm: split hero → marquee band → sticky-rating + quote rail → oversized
+         numbered list → full-bleed photo w/ overlapping red panel → editorial
+         two-column with pull quote → hours/map split → big-type contact on char.
+   ========================================================================== */
+:root{
+  --bg:#f3ece0; --surface:#e8dccb; --ink:#1e1c1a; --ink-soft:#5b5249;
+  --brand:#b0341c; --brand-ink:#fff6ea; --accent:#d29a5b; --line:rgba(30,28,26,.16);
+  --char:#232628; --char-soft:#b9b0a4; --line-dark:rgba(243,236,224,.16);
+
+  --font-display:"Fraunces", Georgia, "Times New Roman", serif;
+  --font-body:"Instrument Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+
+  --step--1:clamp(.8125rem, .79rem + .1vw, .875rem);
+  --step-0:clamp(1rem, .97rem + .15vw, 1.0625rem);
+  --step-1:clamp(1.175rem, 1.1rem + .4vw, 1.4rem);
+  --step-2:clamp(1.4rem, 1.25rem + .8vw, 1.9rem);
+  --step-3:clamp(1.75rem, 1.45rem + 1.5vw, 2.7rem);
+  --step-4:clamp(2.25rem, 1.7rem + 2.7vw, 4rem);
+  --step-5:clamp(2.75rem, 1.9rem + 4.6vw, 5.75rem);
+  --step-6:clamp(2.6rem, 13vw, 6.75rem);
+
+  --space-1:4px; --space-2:8px; --space-3:12px; --space-4:16px; --space-5:24px;
+  --space-6:32px; --space-7:48px; --space-8:64px; --space-9:96px; --space-10:128px;
+  --section:clamp(64px, 12vw, 160px);
+  --gutter:clamp(20px, 5vw, 48px);
+  --max:1280px;
+
+  --radius:3px; --radius-lg:18px;
+
+  --ease-out:cubic-bezier(.16,1,.3,1); --ease-in-out:cubic-bezier(.65,0,.35,1);
+  --dur-1:180ms; --dur-2:400ms; --dur-3:800ms;
+  --bar:0px;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%;scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font-body);font-size:var(--step-0);line-height:1.6;overflow-x:clip;padding-bottom:var(--bar);-webkit-font-smoothing:antialiased}
+body::before{content:"";position:fixed;inset:0;z-index:100;pointer-events:none;opacity:.07;mix-blend-mode:multiply;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .2 0 0 0 0 .15 0 0 0 0 .1 0 0 0 .9 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit}
+p{margin:0;text-wrap:pretty}
+h1,h2,h3{margin:0;font-family:var(--font-display);font-weight:500;line-height:1;letter-spacing:-.02em;text-wrap:balance;font-optical-sizing:auto}
+em,.it{font-style:italic;font-weight:400}
+::selection{background:var(--brand);color:var(--brand-ink)}
+:focus-visible{outline:2px solid var(--brand);outline-offset:3px;border-radius:2px}
+.on-dark :focus-visible{outline-color:var(--accent)}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.skip{position:absolute;left:var(--gutter);top:-60px;z-index:200;background:var(--ink);color:var(--bg);padding:12px 16px;border-radius:var(--radius);text-decoration:none}
+.skip:focus{top:12px}
+section[id]{scroll-margin-top:72px}
+
+.wrap{width:100%;max-width:var(--max);margin-inline:auto;padding-inline:var(--gutter)}
+.grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));column-gap:var(--gutter)}
+@media (min-width:960px){.grid{grid-template-columns:repeat(12,minmax(0,1fr))}}
+
+.label{font-family:var(--font-body);font-size:var(--step--1);font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft);display:flex;align-items:center;gap:var(--space-3)}
+.label::before{content:"";width:28px;height:1px;background:currentColor}
+.on-dark .label{color:var(--char-soft)}
+.lede{font-size:var(--step-1);line-height:1.5;color:var(--ink-soft);max-width:36ch}
+.link{color:inherit;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:.22em;text-decoration-color:color-mix(in srgb,currentColor 40%,transparent);transition:text-decoration-color var(--dur-1)}
+.link:hover{text-decoration-color:currentColor}
+.icon{width:20px;height:20px;flex:none;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+
+/* Buttons */
+.btn{--b:var(--ink);--f:var(--bg);position:relative;display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 24px;border-radius:var(--radius);background:var(--b);color:var(--f);border:1px solid var(--b);font:600 var(--step-0)/1 var(--font-body);text-decoration:none;letter-spacing:.01em;overflow:hidden;isolation:isolate;transition:transform var(--dur-1) var(--ease-out),color var(--dur-2) var(--ease-out)}
+.btn::after{content:"";position:absolute;inset:0;z-index:-1;background:var(--brand);transform:translateY(101%);transition:transform var(--dur-2) var(--ease-out)}
+.btn:active{transform:scale(.97)}
+.btn--brand{--b:var(--brand);--f:var(--brand-ink)}
+.btn--brand::after{background:var(--ink)}
+.btn--ghost{--b:transparent;--f:var(--ink);border-color:var(--ink)}
+.btn--ghost::after{background:var(--ink)}
+.on-dark .btn--ghost{--f:var(--bg);border-color:var(--line-dark)}
+.on-dark .btn--ghost::after{background:var(--bg)}
+@media (hover:hover){
+  .btn:hover::after{transform:translateY(0)}
+  .btn--ghost:hover{color:var(--bg)}
+  .on-dark .btn--ghost:hover{color:var(--ink)}
+  .btn:hover .icon--arrow{transform:translate(2px,-2px)}
+}
+.icon--arrow{transition:transform var(--dur-2) var(--ease-out)}
+
+/* Live status pill */
+.status{display:inline-flex;align-items:center;gap:10px;font-size:var(--step--1);font-weight:600;letter-spacing:.02em}
+.dot{width:9px;height:9px;border-radius:50%;background:var(--ink-soft);flex:none;position:relative}
+.is-live .dot{background:#2f7d4f}
+.is-live .dot::after{content:"";position:absolute;inset:-4px;border-radius:50%;border:1px solid #2f7d4f;opacity:0;animation:ping 2.4s var(--ease-out) infinite}
+@keyframes ping{0%{transform:scale(.4);opacity:.9}100%{transform:scale(1.6);opacity:0}}
+
+/* ---------- Header ---------- */
+.site-header{position:fixed;inset:0 0 auto;z-index:50;background:var(--bg);transition:box-shadow var(--dur-2)}
+.site-header.is-scrolled{box-shadow:0 1px 0 var(--line)}
+.site-header .wrap{display:flex;align-items:center;justify-content:space-between;height:68px;transition:height var(--dur-2) var(--ease-out)}
+.site-header.is-scrolled .wrap{height:56px}
+.wordmark{display:inline-flex;align-items:baseline;gap:10px;text-decoration:none;min-height:44px;align-items:center}
+.wordmark b{font:italic 400 30px/1 var(--font-display);letter-spacing:-.03em;transition:font-size var(--dur-2) var(--ease-out)}
+.is-scrolled .wordmark b{font-size:25px}
+.wordmark b i{font-style:normal;color:var(--brand)}
+.wordmark span{font-size:11px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft);padding-top:4px}
+.nav-desk{display:none}
+.menu-btn{display:inline-flex;align-items:center;gap:10px;min-height:44px;min-width:44px;padding:0 4px 0 12px;background:none;border:0;color:var(--ink);font:600 var(--step--1)/1 var(--font-body);letter-spacing:.12em;text-transform:uppercase;cursor:pointer}
+.menu-btn .bars{position:relative;width:22px;height:10px}
+.menu-btn .bars::before,.menu-btn .bars::after{content:"";position:absolute;left:0;right:0;height:1.6px;background:currentColor;transition:transform var(--dur-2) var(--ease-out)}
+.menu-btn .bars::before{top:0}.menu-btn .bars::after{bottom:0}
+.menu-btn[aria-expanded="true"] .bars::before{transform:translateY(4.2px) rotate(45deg)}
+.menu-btn[aria-expanded="true"] .bars::after{transform:translateY(-4.2px) rotate(-45deg)}
+@media (min-width:960px){
+  .menu-btn{display:none}
+  .nav-desk{display:flex;align-items:center;gap:var(--space-6)}
+  .nav-desk a:not(.btn){text-decoration:none;font-size:var(--step--1);font-weight:600;letter-spacing:.06em;position:relative;padding:12px 0}
+  .nav-desk a:not(.btn)::after{content:"";position:absolute;left:0;right:0;bottom:6px;height:1px;background:currentColor;transform:scaleX(0);transform-origin:right;transition:transform var(--dur-2) var(--ease-out)}
+  .nav-desk a:not(.btn):hover::after{transform:scaleX(1);transform-origin:left}
+  .nav-desk .btn{min-height:44px;padding:0 18px}
+}
+
+/* Mobile menu */
+.menu{position:fixed;inset:0;z-index:45;background:var(--char);color:var(--bg);padding:96px var(--gutter) calc(32px + var(--bar));display:flex;flex-direction:column;justify-content:space-between;visibility:hidden;opacity:0;transition:opacity var(--dur-2) var(--ease-out),visibility 0s var(--dur-2)}
+.menu.is-open{visibility:visible;opacity:1;transition:opacity var(--dur-2) var(--ease-out)}
+.menu-open .site-header{background:var(--char);color:var(--bg);box-shadow:none}
+.menu-open .site-header .wordmark span{color:var(--char-soft)}
+.menu-open .menu-btn{color:var(--bg)}
+.menu ol{list-style:none;margin:0;padding:0;counter-reset:m}
+.menu li{counter-increment:m;border-top:1px solid var(--line-dark);transform:translateY(16px);opacity:0;transition:transform var(--dur-3) var(--ease-out),opacity var(--dur-3) var(--ease-out);transition-delay:calc(var(--i)*60ms + 80ms)}
+.menu.is-open li{transform:none;opacity:1}
+.menu li a{display:flex;align-items:baseline;gap:16px;padding:14px 0;font:500 var(--step-4)/1.05 var(--font-display);letter-spacing:-.02em;text-decoration:none}
+.menu li a::before{content:"0" counter(m);font:600 12px/1 var(--font-body);letter-spacing:.12em;color:var(--accent)}
+.menu-foot{display:grid;gap:var(--space-3);color:var(--char-soft);font-size:var(--step--1)}
+@media (min-width:960px){.menu{display:none}}
+
+/* ---------- Hero ---------- */
+.hero{padding-top:calc(68px + var(--space-5));padding-bottom:var(--section)}
+.hero__top{grid-column:1/-1;display:flex;flex-wrap:wrap;justify-content:space-between;gap:var(--space-3) var(--space-5);align-items:center;margin-bottom:var(--space-5)}
+.hero__top .label::before{display:none}
+.hero__text{grid-column:1/-1}
+.hero h1{font-size:var(--step-6);line-height:.94;letter-spacing:-.035em;margin-bottom:var(--space-6)}
+.hero h1 .line{display:block;overflow:hidden;padding:0 .08em .06em 0;margin-bottom:-.06em}
+.hero h1 .line>span{display:inline-block}
+.hero h1 em{color:var(--brand)}
+.hero .lede{margin-bottom:var(--space-6)}
+.proof{display:flex;flex-wrap:wrap;align-items:center;min-height:44px;gap:var(--space-2) var(--space-4);margin-bottom:var(--space-6);text-decoration:none}
+.proof strong{font:500 var(--step-2)/1 var(--font-display)}
+.proof small{font-size:var(--step--1);color:var(--ink-soft)}
+.proof:hover small{color:var(--ink)}
+.stars{position:relative;display:inline-flex;color:rgba(30,28,26,.18);line-height:0}
+.stars__fg{position:absolute;inset:0 auto 0 0;width:calc(var(--r) / 5 * 100%);overflow:hidden;color:var(--brand);display:flex}
+.stars svg{width:18px;height:18px;flex:none;fill:currentColor}
+.on-dark .stars{color:rgba(243,236,224,.2)}
+.on-dark .stars__fg{color:var(--accent)}
+.hero__ctas{display:flex;flex-wrap:wrap;gap:var(--space-3)}
+.hero__ctas .btn{flex:1 1 150px}
+.hero__media{grid-column:1/-1;margin-top:var(--space-6);position:relative}
+@media (max-width:767.98px){.hero__ctas{display:none}.hero .proof{margin-bottom:0}.hero h1{margin-bottom:var(--space-5)}.hero .lede{margin-bottom:var(--space-5)}}
+.hero__pic{position:relative}
+.hero__pic::before{content:"";position:absolute;inset:28px -12px -12px 28px;background:var(--char);border-radius:var(--radius)}
+.hero__frame{position:relative;overflow:hidden;border-radius:var(--radius);aspect-ratio:4/5}
+.hero__frame img{width:100%;height:100%;object-fit:cover;object-position:55% 70%;filter:brightness(1.08) contrast(1.04) saturate(1.08)}
+@media (max-width:959.98px){.hero__frame{aspect-ratio:1/1}}
+.caption{display:flex;justify-content:space-between;gap:var(--space-4);margin-top:var(--space-5);font-size:var(--step--1);color:var(--ink-soft);position:relative}
+.caption i{font-family:var(--font-display);font-size:var(--step-0);color:var(--ink)}
+@media (min-width:640px){.hero__media{grid-column:2/-1}}
+@media (min-width:960px){
+  .hero{padding-top:calc(68px + var(--space-8))}
+  .hero__text{grid-column:1/span 7;align-self:end;padding-bottom:var(--space-6)}
+  .hero__media{grid-column:8/-1;grid-row:2;margin-top:0}
+  .hero__ctas .btn{flex:0 0 auto}
+  .hero{padding-bottom:var(--space-9)}
+  .hero__top .status{display:none}
+}
+
+/* ---------- Marquee (signature) ---------- */
+.band{background:var(--char);color:var(--bg);padding:var(--space-6) 0;overflow:hidden}
+.marquee{display:flex;width:max-content;animation:marquee 70s linear infinite}
+.marquee ul{display:flex;list-style:none;margin:0;padding:0}
+.marquee li{display:flex;align-items:center;gap:var(--space-6);padding-right:var(--space-6);white-space:nowrap;font:italic 400 var(--step-3)/1.1 var(--font-display);letter-spacing:-.01em}
+.marquee li small{font:600 12px/1 var(--font-body);font-style:normal;letter-spacing:.14em;text-transform:uppercase;color:var(--char-soft)}
+.marquee li svg{width:22px;height:22px;color:var(--accent);fill:none;stroke:currentColor;stroke-width:1.6}
+.band:hover .marquee{animation-play-state:paused}
+@keyframes marquee{to{transform:translateX(-50%)}}
+
+/* ---------- Reviews ---------- */
+.reviews{padding-block:var(--section)}
+.score{grid-column:1/-1;margin-bottom:var(--space-8)}
+.score .big{display:flex;align-items:flex-end;gap:var(--space-4);margin:var(--space-5) 0 var(--space-4)}
+.score .num{font:500 clamp(6rem,30vw,12rem)/.8 var(--font-display);letter-spacing:-.05em}
+.score .of{font:italic 400 var(--step-2)/1 var(--font-display);color:var(--ink-soft);padding-bottom:.35em}
+.score .stars svg{width:26px;height:26px}
+.score p{margin-top:var(--space-4);color:var(--ink-soft);max-width:30ch}
+.score .btn{margin-top:var(--space-6)}
+.feature-quote{grid-column:1/-1;margin:0 0 var(--space-8)}
+.feature-quote blockquote{margin:0;font:400 var(--step-3)/1.18 var(--font-display);letter-spacing:-.015em;text-wrap:pretty}
+.feature-quote blockquote::before{content:"“";display:block;font:italic 400 5rem/.6 var(--font-display);color:var(--brand);margin-bottom:var(--space-3)}
+.cite{display:flex;align-items:center;gap:var(--space-3);margin-top:var(--space-5);font-size:var(--step--1);font-weight:600;letter-spacing:.06em;text-transform:uppercase}
+.cite .rs{color:var(--brand);letter-spacing:.1em}
+.cite span:last-child{color:var(--ink-soft);font-weight:400;letter-spacing:.02em;text-transform:none}
+.rail{grid-column:1/-1;display:grid;grid-auto-flow:column;grid-auto-columns:84%;gap:var(--space-4);overflow-x:auto;scroll-snap-type:x mandatory;margin-inline:calc(var(--gutter) * -1);padding:0 var(--gutter) var(--space-4);scroll-padding-inline:var(--gutter);scrollbar-width:none;list-style:none;margin-block:0}
+.rail::-webkit-scrollbar{display:none}
+.rail li{scroll-snap-align:start;background:var(--surface);border-radius:var(--radius);padding:var(--space-6) var(--space-5);display:flex;flex-direction:column;justify-content:space-between;gap:var(--space-5)}
+.rail blockquote{margin:0;font-size:var(--step-0);line-height:1.6}
+.rail .cite{margin-top:0}
+.rail-hint{grid-column:1/-1;display:flex;align-items:center;gap:var(--space-2);margin-top:var(--space-3);font-size:var(--step--1);color:var(--ink-soft)}
+@media (min-width:960px){
+  .score{grid-column:1/span 4;grid-row:1/span 2;margin:0;align-self:start;position:sticky;top:120px}
+  .feature-quote{grid-column:6/-1}
+  .rail{grid-column:6/-1;grid-auto-flow:row;grid-template-columns:1fr 1fr;grid-auto-columns:auto;overflow:visible;margin:0;padding:0;gap:var(--gutter)}
+  .rail li:nth-child(even){transform:translateY(var(--space-8))}
+  .rail-hint{display:none}
+  .reviews{padding-bottom:calc(var(--section) + var(--space-8))}
+}
+
+/* ---------- Food list ---------- */
+.food{padding-block:var(--section);border-top:1px solid var(--line)}
+.food__head{grid-column:1/-1;margin-bottom:var(--space-8)}
+.food__head h2{font-size:var(--step-5);margin:var(--space-5) 0}
+.food__head h2 em{color:var(--brand)}
+.dishes{grid-column:1/-1;list-style:none;margin:0;padding:0}
+.dish{display:grid;grid-template-columns:auto 1fr;column-gap:var(--space-4);padding:var(--space-6) 0;border-top:1px solid var(--line)}
+.dish:last-child{border-bottom:1px solid var(--line)}
+.dish__n{font:italic 400 var(--step-2)/1 var(--font-display);color:var(--brand);padding-top:.3em;min-width:2.2ch}
+.dish h3{font-size:var(--step-4);line-height:1;margin-bottom:var(--space-4);transition:transform var(--dur-2) var(--ease-out)}
+.dish blockquote{margin:0;color:var(--ink-soft);max-width:52ch}
+.dish blockquote b{font-weight:400;color:var(--ink)}
+.dish__meta{grid-column:2;display:flex;flex-wrap:wrap;gap:var(--space-2) var(--space-4);margin-top:var(--space-4);font-size:var(--step--1);color:var(--ink-soft)}
+.dish__meta span:first-child{font-weight:600;color:var(--ink);letter-spacing:.04em}
+.tally{display:inline-flex;align-items:center;gap:8px}
+.tally::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--brand)}
+@media (hover:hover){.dish:hover h3{transform:translateX(8px)}}
+@media (min-width:960px){
+  .food__head{grid-column:1/span 4;align-self:start;position:sticky;top:120px}
+  .dishes{grid-column:6/-1}
+  .dish{grid-template-columns:5rem 1fr 11rem}
+  .dish__meta{grid-column:3;grid-row:1;flex-direction:column;align-items:flex-end;text-align:right;margin-top:.6em}
+  .dish:first-child{border-top:0;padding-top:0}
+}
+
+/* ---------- Doughnut feature ---------- */
+.feature{padding-bottom:var(--section)}
+.feature__img,.feature__panel{grid-column:1/-1}
+.feature__img{aspect-ratio:1/1;overflow:hidden}
+.feature__img img{width:100%;height:100%;object-fit:cover;object-position:50% 68%}
+.feature__panel{position:relative;margin:-96px 0 0 var(--gutter);background:var(--brand);color:var(--brand-ink);padding:var(--space-7) var(--gutter) var(--space-7) var(--space-6);border-radius:var(--radius) 0 0 var(--radius)}
+.feature__panel .label{color:var(--brand-ink);opacity:.85}
+.feature__panel h2{font-size:var(--step-4);margin:var(--space-5) 0 var(--space-6)}
+.feature__panel blockquote{margin:0;font:italic 400 var(--step-1)/1.45 var(--font-display)}
+.feature__panel .cite .rs,.feature__panel .cite span:last-child{color:var(--brand-ink)}
+.feature__panel .cite span:last-child{opacity:.8}
+@media (min-width:960px){
+  .feature .grid{align-items:end}
+  .feature__img{grid-column:1/span 8;grid-row:1;aspect-ratio:5/4;border-radius:var(--radius)}
+  .feature__panel{grid-column:8/-1;grid-row:1;margin:0 0 calc(var(--space-9) * -1);border-radius:var(--radius);padding:var(--space-8) var(--space-7)}
+  .feature{padding-bottom:calc(var(--section) + var(--space-9))}
+  .feature .grid{padding-right:var(--gutter)}
+}
+@media (min-width:1440px){.feature .grid{padding-right:calc((100vw - var(--max)) / 2 + var(--gutter))}}
+@media (min-width:1280px){.feature__img img{object-position:50% 58%}}
+
+/* ---------- Room ---------- */
+.room{padding-bottom:var(--section)}
+.room__text{grid-column:1/-1}
+.room h2{font-size:var(--step-5);margin:var(--space-5) 0 var(--space-7)}
+.room h2 em{color:var(--brand)}
+.pull{margin:0 0 var(--space-7);padding-left:var(--space-5);border-left:2px solid var(--brand)}
+.pull blockquote{margin:0;font:400 var(--step-2)/1.3 var(--font-display);letter-spacing:-.01em}
+.room__aside{color:var(--ink-soft);max-width:44ch}
+.room__aside blockquote{margin:0}
+.room__img{grid-column:1/-1;margin-top:var(--space-7)}
+.room__img .frame{aspect-ratio:4/5;overflow:hidden;border-radius:var(--radius-lg) var(--radius-lg) var(--radius) var(--radius)}
+.room__img img{width:100%;height:100%;object-fit:cover;object-position:50% 30%;transition:transform 1.2s var(--ease-out)}
+@media (hover:hover){.room__img:hover img{transform:scale(1.03)}}
+@media (min-width:640px){.room__img{grid-column:2/-1}}
+@media (min-width:960px){
+  .room__text{grid-column:1/span 6;align-self:center}
+  .room__img{grid-column:8/-1;margin-top:0}
+  .room__img .frame{aspect-ratio:3/4}
+}
+
+/* ---------- Visit ---------- */
+.visit{background:var(--surface);padding-block:var(--section)}
+.visit__info{grid-column:1/-1}
+.visit h2{font-size:var(--step-4);margin:var(--space-5) 0 var(--space-6)}
+.now{display:flex;align-items:center;gap:var(--space-4);padding:var(--space-5) 0;border-block:1px solid var(--line);margin-bottom:var(--space-6)}
+.now .dot{width:14px;height:14px}
+.now strong{display:block;font:500 var(--step-3)/1 var(--font-display);letter-spacing:-.02em}
+.now small{display:block;margin-top:6px;color:var(--ink-soft);font-size:var(--step--1)}
+.hours{width:100%;border-collapse:collapse;margin-bottom:var(--space-7)}
+.hours th,.hours td{padding:12px 0;border-bottom:1px solid var(--line);text-align:left;font-weight:400}
+.hours td{text-align:right;font-variant-numeric:tabular-nums}
+.hours tr.is-closed td{color:var(--ink-soft)}
+.hours tr.is-today th,.hours tr.is-today td{font-weight:600;color:var(--ink)}
+.hours tr.is-today th::after{content:"Today";margin-left:10px;padding:3px 8px;border-radius:99px;background:var(--brand);color:var(--brand-ink);font-size:11px;letter-spacing:.1em;text-transform:uppercase;vertical-align:2px}
+.address{font:400 var(--step-2)/1.25 var(--font-display);font-style:normal;margin-bottom:var(--space-5)}
+.visit__actions{display:flex;flex-wrap:wrap;gap:var(--space-3)}
+.visit__actions .btn{flex:1 1 160px}
+.map{grid-column:1/-1;margin-top:var(--space-8);position:relative}
+.map__frame{aspect-ratio:1/1;border-radius:var(--radius-lg);overflow:hidden;background:var(--bg);border:1px solid var(--line)}
+.map iframe{width:100%;height:100%;border:0;display:block;filter:grayscale(.35) sepia(.12)}
+.map__fallback{display:inline-flex;margin-top:var(--space-4);font-size:var(--step--1);min-height:44px;align-items:center}
+@media (min-width:960px){
+  .visit__info{grid-column:1/span 5}
+  .map{grid-column:7/-1;margin-top:0}
+  .map__frame{aspect-ratio:auto;height:100%;min-height:560px}
+}
+
+/* ---------- Contact ---------- */
+.contact{background:var(--char);color:var(--bg);padding-block:var(--section)}
+.contact__text{grid-column:1/-1}
+.contact h2{font-size:var(--step-5);margin:var(--space-5) 0 var(--space-6)}
+.contact h2 em{color:var(--accent)}
+.contact .lede{color:var(--char-soft)}
+.tel-big{display:inline-block;margin:var(--space-7) 0;font:500 var(--step-4)/1 var(--font-display);letter-spacing:-.02em;text-decoration:none;background:linear-gradient(currentColor,currentColor) 0 100%/0 1px no-repeat;transition:background-size var(--dur-3) var(--ease-out);padding-bottom:6px;font-variant-numeric:lining-nums}
+.tel-big:hover{background-size:100% 1px}
+.contact__actions{grid-column:1/-1;display:grid;gap:var(--space-3)}
+.contact__actions .btn{justify-content:space-between}
+.contact .btn--brand::after{background:var(--bg)}
+@media (hover:hover){.contact .btn--brand:hover{color:var(--ink)}}
+.order-note{grid-column:1/-1;margin-top:var(--space-7);padding-top:var(--space-5);border-top:1px solid var(--line-dark);color:var(--char-soft);font-size:var(--step--1);max-width:60ch}
+@media (min-width:960px){
+  .contact__text{grid-column:1/span 7}
+  .contact__actions{grid-column:9/-1;align-self:end}
+}
+
+/* ---------- Footer ---------- */
+.footer{background:var(--char);color:var(--char-soft);padding:var(--space-7) 0 var(--space-8);border-top:1px solid var(--line-dark);font-size:var(--step--1)}
+.footer .wrap{display:flex;flex-wrap:wrap;gap:var(--space-5);justify-content:space-between;align-items:center}
+.footer .wordmark b{color:var(--bg)}
+.footer .wordmark span{color:var(--char-soft)}
+.social{display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;border:1px solid var(--line-dark);border-radius:50%;color:var(--bg);transition:background var(--dur-2),color var(--dur-2)}
+.social:hover{background:var(--bg);color:var(--ink)}
+
+/* ---------- Sticky action bar (phones) ---------- */
+.actionbar{position:fixed;left:0;right:0;bottom:0;z-index:40;display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line-dark);padding-bottom:env(safe-area-inset-bottom);background-color:var(--char);border-top:1px solid var(--line-dark)}
+.actionbar a{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;min-height:60px;background:var(--char);color:var(--bg);text-decoration:none;font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase}
+.actionbar a:first-child{background:var(--brand);color:var(--brand-ink)}
+.actionbar a:active{opacity:.8}
+@media (max-width:767.98px){:root{--bar:calc(60px + env(safe-area-inset-bottom))}}
+@media (min-width:768px){.actionbar{display:none}}
+
+/* ---------- Motion (only when the visitor allows it) ---------- */
+@media (prefers-reduced-motion:no-preference){
+  html.js .site-header{animation:fade 600ms var(--ease-out) both}
+  html.js .hero h1 .line>span{transform:translateY(105%);animation:rise var(--dur-3) var(--ease-out) forwards;animation-delay:calc(180ms + var(--i) * 80ms)}
+  html.js .hero__fade{opacity:0;animation:up var(--dur-3) var(--ease-out) forwards;animation-delay:calc(480ms + var(--i,0) * 80ms)}
+  html.js .hero__frame{clip-path:inset(100% 0 0 0);animation:unclip 1000ms var(--ease-in-out) 260ms forwards}
+  html.js .hero__frame img{transform:scale(1.08);animation:settle 1400ms var(--ease-out) 260ms forwards}
+  html.js .reveal{opacity:0;transform:translateY(20px);transition:opacity var(--dur-3) var(--ease-out),transform var(--dur-3) var(--ease-out);transition-delay:calc(var(--d,0) * 80ms)}
+  html.js .reveal.is-in{opacity:1;transform:none}
+  html.js .rail li:nth-child(even).reveal.is-in{transform:none}
+  @media (min-width:960px){html.js .rail li:nth-child(even).reveal.is-in{transform:translateY(var(--space-8))}}
+  html.js .clip{clip-path:inset(0 0 100% 0);transition:clip-path 1100ms var(--ease-in-out)}
+  html.js .clip.is-in{clip-path:inset(0)}
+  @supports (animation-timeline:view()){
+    .parallax img{animation:drift linear both;animation-timeline:view();animation-range:cover 0% cover 100%}
+  }
+}
+@media (prefers-reduced-motion:reduce){
+  .marquee{animation:none}
+  .is-live .dot::after{animation:none}
+  .menu li{transform:none;opacity:1;transition:none}
+}
+@keyframes fade{from{opacity:0}to{opacity:1}}
+@keyframes rise{to{transform:none}}
+@keyframes up{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+@keyframes unclip{to{clip-path:inset(0)}}
+@keyframes settle{to{transform:scale(1)}}
+@keyframes drift{from{transform:scale(1.12) translateY(-4%)}to{transform:scale(1.12) translateY(4%)}}
+</style>
+<script>
+document.documentElement.classList.add('js');
+document.addEventListener('DOMContentLoaded', function () {
+  var root = document.documentElement, body = document.body;
+
+  /* Year */
+  document.querySelectorAll('[data-year]').forEach(function (el) { el.textContent = new Date().getFullYear(); });
+
+  /* Header shrink */
+  var header = document.querySelector('.site-header');
+  var onScroll = function () { header.classList.toggle('is-scrolled', scrollY > 24); };
+  onScroll(); addEventListener('scroll', onScroll, { passive: true });
+
+  /* Menu */
+  var btn = document.querySelector('.menu-btn'), menu = document.getElementById('menu');
+  function setMenu(open) {
+    btn.setAttribute('aria-expanded', open); btn.querySelector('.menu-btn__t').textContent = open ? 'Close' : 'Menu';
+    menu.classList.toggle('is-open', open); menu.setAttribute('aria-hidden', !open);
+    body.style.overflow = open ? 'hidden' : ''; root.classList.toggle('menu-open', open);
+    if (open) menu.querySelector('a').focus({ preventScroll: true });
+  }
+  btn.addEventListener('click', function () { setMenu(btn.getAttribute('aria-expanded') !== 'true'); });
+  menu.querySelectorAll('a').forEach(function (a) { a.addEventListener('click', function () { setMenu(false); }); });
+  addEventListener('keydown', function (e) { if (e.key === 'Escape' && menu.classList.contains('is-open')) { setMenu(false); btn.focus(); } });
+  addEventListener('resize', function () { if (innerWidth >= 960 && menu.classList.contains('is-open')) setMenu(false); });
+
+  /* Reveal on scroll */
+  var items = document.querySelectorAll('.reveal, .clip');
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (es) {
+      es.forEach(function (e) { if (e.isIntersecting) { (e.target._clip || e.target).classList.add('is-in'); io.unobserve(e.target); } });
+    }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
+    /* clip-path-hidden elements never intersect, so watch their parent instead */
+    items.forEach(function (el) { var t = el.classList.contains('clip') ? el.parentElement : el; if (t !== el) t._clip = el; io.observe(t); });
+  } else items.forEach(function (el) { el.classList.add('is-in'); });
+
+  /* Opening hours — live status (Europe/London) */
+  var HOURS = { monday: 'Closed', tuesday: '9 am–6:30 pm', wednesday: '9 am–7 pm', thursday: '9 am–7 pm', friday: '9 am–7 pm', saturday: '9 am–7 pm', sunday: '10 am–6 pm' };
+  var DAYS = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'];
+  function toMin(t, mer) {
+    var m = String(t).trim().toLowerCase().match(/^(\d{1,2})(?:[:.h](\d{2}))?\s*(a\.?m\.?|p\.?m\.?)?$/);
+    if (!m) return null;
+    var h = +m[1], mi = +(m[2] || 0), x = (m[3] || mer || '').replace(/\./g, '');
+    if (x === 'pm' && h < 12) h += 12; if (x === 'am' && h === 12) h = 0;
+    return h * 60 + mi;
+  }
+  function ranges(s) {
+    s = String(s || '').trim().toLowerCase();
+    if (!s || /closed|fermé/.test(s)) return [];
+    if (/24\s*h|24 hours/.test(s)) return [[0, 1440]];
+    return s.split(/[,;]/).map(function (p) {
+      var ab = p.split(/\s*[–—-]\s*|\s+to\s+/); if (ab.length < 2) return null;
+      var a = ab[0], b = ab[1], mb = (b.match(/[ap]\.?m/) || [''])[0].replace('.', '');
+      var st = toMin(a), en = toMin(b);
+      if (st === null || en === null) return null;
+      if (!/[ap]\.?m/.test(a) && mb) { st = toMin(a, mb); if (st > en) st = toMin(a, mb === 'pm' ? 'am' : 'pm'); }
+      if (en <= st) en += 1440;
+      return [st, en];
+    }).filter(Boolean);
+  }
+  function fmt(m) {
+    m = m % 1440; var h = Math.floor(m / 60), mi = m % 60;
+    return (h % 12 || 12) + (mi ? ':' + (mi < 10 ? '0' : '') + mi : '') + (h < 12 ? 'am' : 'pm');
+  }
+  function now() {
+    try {
+      var p = new Intl.DateTimeFormat('en-GB', { timeZone: 'Europe/London', weekday: 'long', hour: '2-digit', minute: '2-digit', hourCycle: 'h23' }).formatToParts(new Date());
+      var g = function (t) { for (var i = 0; i < p.length; i++) if (p[i].type === t) return p[i].value; };
+      return { day: DAYS.indexOf(g('weekday').toLowerCase()), min: (+g('hour') % 24) * 60 + +g('minute') };
+    } catch (e) { var d = new Date(); return { day: d.getDay(), min: d.getHours() * 60 + d.getMinutes() }; }
+  }
+  function status() {
+    var n = now(), today = ranges(HOURS[DAYS[n.day]]), yest = ranges(HOURS[DAYS[(n.day + 6) % 7]]), i, r;
+    for (i = 0; i < yest.length; i++) if (yest[i][1] > 1440 && n.min < yest[i][1] - 1440) return { open: true, until: yest[i][1], day: n.day };
+    for (i = 0; i < today.length; i++) if (n.min >= today[i][0] && n.min < today[i][1]) return { open: true, until: today[i][1], all: today[i][1] - today[i][0] >= 1440, left: today[i][1] - n.min, day: n.day };
+    for (var k = 0; k < 8; k++) {
+      r = ranges(HOURS[DAYS[(n.day + k) % 7]]);
+      for (i = 0; i < r.length; i++) if (k > 0 || r[i][0] > n.min) return { open: false, inDays: k, at: r[i][0], dname: DAYS[(n.day + k) % 7], day: n.day };
+    }
+    return { open: false, day: n.day };
+  }
+  var s = status(), cap = function (w) { return w.charAt(0).toUpperCase() + w.slice(1); }, short, big, sub;
+  if (s.open) {
+    big = s.left !== undefined && s.left <= 45 ? 'Closing soon' : 'Open now';
+    sub = s.all ? 'Open all day' : 'Until ' + fmt(s.until) + ' today';
+    short = s.all ? 'Open now · all day' : big + ' · until ' + fmt(s.until);
+  } else if (s.at !== undefined) {
+    var when = s.inDays === 0 ? '' : s.inDays === 1 ? 'tomorrow ' : cap(s.dname) + ' ';
+    big = 'Closed right now'; sub = 'Opens ' + when + fmt(s.at); short = 'Closed · opens ' + when + fmt(s.at);
+  }
+  if (big) {
+    document.querySelectorAll('[data-status]').forEach(function (el) {
+      el.classList.toggle('is-live', s.open);
+      var t = el.querySelector('[data-status-text]'); if (t) t.textContent = short;
+      var b = el.querySelector('[data-status-big]'); if (b) b.textContent = big;
+      var u = el.querySelector('[data-status-sub]'); if (u) u.textContent = sub;
+    });
+  }
+  var row = document.querySelector('.hours tr[data-day="' + DAYS[s.day] + '"]');
+  if (row) { row.classList.add('is-today'); row.setAttribute('aria-current', 'date'); }
+});
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CafeOrCoffeeShop",
+  "name": "Irinos Cafe",
+  "address": { "@type": "PostalAddress", "streetAddress": "37 Kettering Rd", "addressLocality": "Northampton", "postalCode": "NN1 4AJ", "addressCountry": "GB" },
+  "telephone": "+447586909760",
+  "geo": { "@type": "GeoCoordinates", "latitude": 52.241057299999994, "longitude": -0.8864845 },
+  "hasMap": "https://www.google.com/maps/place/?q=place_id:ChIJjY0Z_s8Od0gRwtRq74E4hi8",
+  "openingHoursSpecification": [
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": "Tuesday", "opens": "09:00", "closes": "18:30" },
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Wednesday", "Thursday", "Friday", "Saturday"], "opens": "09:00", "closes": "19:00" },
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": "Sunday", "opens": "10:00", "closes": "18:00" }
+  ],
+  "sameAs": ["http://www.facebook.com/irinoscafe"]
+}
+</script>
+<!--sf:preview--><meta name="robots" content="noindex, nofollow"><!--/sf:preview-->
+<!--sf:og--><meta property="og:image" content="https://irinos-cafe-northampton.aymenjallouli.dev/og.jpg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:url" content="https://irinos-cafe-northampton.aymenjallouli.dev/"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="https://irinos-cafe-northampton.aymenjallouli.dev/og.jpg"><!--/sf:og-->
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-phone" viewBox="0 0 24 24"><path d="M5 3.5h3.2l1.6 4.2-2.1 1.4a11.5 11.5 0 0 0 7.2 7.2l1.4-2.1 4.2 1.6V19a1.5 1.5 0 0 1-1.6 1.5C10.6 20 4 13.4 3.5 5.1A1.5 1.5 0 0 1 5 3.5z"/></symbol>
+  <symbol id="i-text" viewBox="0 0 24 24"><path d="M4 5.5h16v10.5H9.5L5 19.5V16H4z"/><path d="M8 9.5h8M8 12.5h5"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s-6.5-6.1-6.5-11a6.5 6.5 0 0 1 13 0c0 4.9-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.4"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"/></symbol>
+  <symbol id="i-fb" viewBox="0 0 24 24"><path d="M14.5 3.5h-1.8a3.7 3.7 0 0 0-3.7 3.7v2.3H7v3h2v8h3v-8h2.5l.5-3h-3V7.6c0-.6.4-1 1-1h1.5z"/></symbol>
+  <symbol id="i-star" viewBox="0 0 24 24"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.4L12 17.2l-5.7 3.1 1.2-6.4-4.7-4.4 6.4-.8z"/></symbol>
+  <symbol id="i-swipe" viewBox="0 0 24 24"><path d="M4 12h15M14 7l5 5-5 5"/></symbol>
+  <symbol id="i-spark" viewBox="0 0 24 24"><path d="M12 3v18M3 12h18M5.6 5.6l12.8 12.8M18.4 5.6 5.6 18.4"/></symbol>
+</svg>
+
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="wordmark" href="#top" aria-label="Irinos Cafe, back to top"><b>Irinos<i>.</i></b><span>Cafe · NN1</span></a>
+    <nav class="nav-desk" aria-label="Main">
+      <a href="#food">The food</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#room">The room</a>
+      <a href="#visit">Hours &amp; map</a>
+      <span class="status" data-status><span class="dot"></span><span data-status-text>Tue–Sun · closed Mondays</span></span>
+      <a class="btn btn--brand" href="tel:+447586909760"><svg class="icon"><use href="#i-phone"/></svg>07586 909760</a>
+    </nav>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="menu"><span class="menu-btn__t">Menu</span><span class="bars" aria-hidden="true"></span></button>
+  </div>
+</header>
+
+<nav class="menu" id="menu" aria-label="Mobile" aria-hidden="true">
+  <ol>
+    <li style="--i:0"><a href="#food">The food</a></li>
+    <li style="--i:1"><a href="#reviews">Reviews</a></li>
+    <li style="--i:2"><a href="#room">The room</a></li>
+    <li style="--i:3"><a href="#visit">Hours &amp; map</a></li>
+    <li style="--i:4"><a href="#contact">Call or text</a></li>
+  </ol>
+  <div class="menu-foot">
+    <span class="status" data-status><span class="dot"></span><span data-status-text>Tue–Sun · closed Mondays</span></span>
+    <span>37 Kettering Rd, Northampton NN1 4AJ</span>
+  </div>
+</nav>
+
+<main id="main">
+  <!-- HERO -->
+  <section class="hero" id="top" aria-labelledby="hero-title">
+    <div class="wrap grid">
+      <div class="hero__top hero__fade" style="--i:0">
+        <span class="label">No. 37 Kettering Road · Northampton</span>
+        <span class="status" data-status><span class="dot"></span><span data-status-text>Tue–Sun · closed Mondays</span></span>
+      </div>
+      <div class="hero__text">
+        <h1 id="hero-title">
+          <span class="line"><span style="--i:0">Lithuanian</span></span>
+          <span class="line"><span style="--i:1">kebabs worth</span></span>
+          <span class="line"><span style="--i:2"><em>the drive.</em></span></span>
+        </h1>
+        <p class="lede hero__fade" style="--i:1">Shawarma wraps, crispy chebureki, freshly made doughnuts and coffee. Eat in or take&nbsp;away.</p>
+        <a class="proof hero__fade" style="--i:2" href="https://www.google.com/maps/place/?q=place_id:ChIJjY0Z_s8Od0gRwtRq74E4hi8" target="_blank" rel="noopener">
+          <strong>4.5</strong>
+          <span class="stars" style="--r:4.5" role="img" aria-label="Rated 4.5 out of 5">
+            <svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg>
+            <span class="stars__fg"><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg></span>
+          </span>
+          <small class="link">234 Google reviews</small>
+        </a>
+        <div class="hero__ctas hero__fade" style="--i:3">
+          <a class="btn btn--brand" href="tel:+447586909760"><svg class="icon"><use href="#i-phone"/></svg>Call the café</a>
+          <a class="btn btn--ghost" href="https://www.google.com/maps/dir/?api=1&amp;destination=Irinos%20Cafe%2C%2037%20Kettering%20Rd%2C%20Northampton%2C%20NN1%204AJ" target="_blank" rel="noopener"><svg class="icon"><use href="#i-pin"/></svg>Directions</a>
+        </div>
+      </div>
+      <figure class="hero__media" style="margin-inline:0;margin-bottom:0">
+        <div class="hero__pic"><div class="hero__frame parallax">
+          <img src="assets/photos/photo-01.jpg" width="1200" height="1600" fetchpriority="high" alt="Two chicken shawarma wraps in paper sleeves on slate boards, a bottle of Coca-Cola and a sugared doughnut on the table at Irinos Cafe">
+        </div></div>
+        <figcaption class="caption"><i>Chicken shawarma, on slate.</i><span>Kettering Rd, NN1</span></figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- MARQUEE: verbatim review lines -->
+  <div class="band on-dark" role="region" aria-label="What reviewers say">
+    <div class="marquee">
+      <ul>
+        <li>“The sauce is genuinely next level” <small>Rika T.</small><svg aria-hidden="true"><use href="#i-spark"/></svg></li>
+        <li>“You definitely never leave hungry” <small>Matthew T.</small><svg aria-hidden="true"><use href="#i-spark"/></svg></li>
+        <li>“The coffee is dangerously addictive” <small>Olga B.</small><svg aria-hidden="true"><use href="#i-spark"/></svg></li>
+        <li>“The most delicious kebab I’ve ever tried in my life” <small>Larissa J.</small><svg aria-hidden="true"><use href="#i-spark"/></svg></li>
+        <li>“Very soft and airy/spongey” <small>Matas S.</small><svg aria-hidden="true"><use href="#i-spark"/></svg></li>
+      </ul>
+      <ul aria-hidden="true">
+        <li>“The sauce is genuinely next level” <small>Rika T.</small><svg><use href="#i-spark"/></svg></li>
+        <li>“You definitely never leave hungry” <small>Matthew T.</small><svg><use href="#i-spark"/></svg></li>
+        <li>“The coffee is dangerously addictive” <small>Olga B.</small><svg><use href="#i-spark"/></svg></li>
+        <li>“The most delicious kebab I’ve ever tried in my life” <small>Larissa J.</small><svg><use href="#i-spark"/></svg></li>
+        <li>“Very soft and airy/spongey” <small>Matas S.</small><svg><use href="#i-spark"/></svg></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- REVIEWS -->
+  <section class="reviews" id="reviews" aria-labelledby="reviews-title">
+    <div class="wrap grid">
+      <div class="score reveal">
+        <span class="label">On Google</span>
+        <h2 id="reviews-title" class="sr-only">Reviews</h2>
+        <div class="big"><span class="num">4.5</span><span class="of">out of 5</span></div>
+        <span class="stars" style="--r:4.5" role="img" aria-label="Rated 4.5 out of 5">
+          <svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg>
+          <span class="stars__fg"><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg></span>
+        </span>
+        <p>From 234 reviews. Kebabs come up in 45 of them.</p>
+        <a class="btn btn--ghost" href="https://www.google.com/maps/place/?q=place_id:ChIJjY0Z_s8Od0gRwtRq74E4hi8" target="_blank" rel="noopener">Read all 234 reviews on Google<svg class="icon icon--arrow"><use href="#i-arrow"/></svg></a>
+      </div>
+
+      <figure class="feature-quote reveal">
+        <blockquote>The shawarma is amazing and honestly something I’d recommend to anyone… The food is always full of flavour, fresh, and the portions are great. You definitely never leave hungry.</blockquote>
+        <figcaption class="cite"><span class="rs" aria-label="5 out of 5">★★★★★</span><span>Matthew T.</span><span>Google review</span></figcaption>
+      </figure>
+
+      <ul class="rail" aria-label="More Google reviews">
+        <li class="reveal" style="--d:0">
+          <blockquote>I love this place. The wraps are incredible and the chebureki are truly crispy and full of flavor. And the coffee. The coffee is dangerously addictive.</blockquote>
+          <div class="cite"><span class="rs" aria-label="5 out of 5">★★★★★</span><span>Olga B.</span></div>
+        </li>
+        <li class="reveal" style="--d:1">
+          <blockquote>…we find ourselves making the drive fairly often just for a taste of their Lithuanian kebabs. The wraps are consistently delicious, and the sauce is genuinely next level.</blockquote>
+          <div class="cite"><span class="rs" aria-label="4 out of 5">★★★★☆</span><span>Rika T.</span></div>
+        </li>
+        <li class="reveal" style="--d:2">
+          <blockquote>Very tasty chicken shawarma wraps, wholesome filling fresh big portions… First time trying Irinos Cafe and will definitely be back again in the near future…</blockquote>
+          <div class="cite"><span class="rs" aria-label="5 out of 5">★★★★★</span><span>Matas S.</span></div>
+        </li>
+        <li class="reveal" style="--d:3">
+          <blockquote>Guys, thank you so much for the always very warm atmosphere in your cafe, for the most delicious kebab I’ve ever tried in my life…</blockquote>
+          <div class="cite"><span class="rs" aria-label="5 out of 5">★★★★★</span><span>Larissa J.</span></div>
+        </li>
+      </ul>
+      <p class="rail-hint" aria-hidden="true"><svg class="icon"><use href="#i-swipe"/></svg>Swipe for more</p>
+    </div>
+  </section>
+
+  <!-- FOOD -->
+  <section class="food" id="food" aria-labelledby="food-title">
+    <div class="wrap grid">
+      <div class="food__head reveal">
+        <span class="label">The counter</span>
+        <h2 id="food-title">What the reviews <em>keep naming.</em></h2>
+        <p class="lede">The dishes Google reviewers order, and come back for, in their own words.</p>
+      </div>
+      <ol class="dishes">
+        <li class="dish reveal" style="--d:0">
+          <span class="dish__n">01</span>
+          <div>
+            <h3>Kebabs &amp; shawarma wraps</h3>
+            <blockquote>“The wraps are consistently delicious, and <b>the sauce is genuinely next level.</b>” <span class="sr-only">Rika T.</span></blockquote>
+          </div>
+          <p class="dish__meta"><span>Rika T.</span><span class="tally">Kebabs in 45 reviews</span><span class="tally">Wraps in 13</span></p>
+        </li>
+        <li class="dish reveal" style="--d:1">
+          <span class="dish__n">02</span>
+          <div>
+            <h3>Chebureki</h3>
+            <blockquote>“…the chebureki are <b>truly crispy and full of flavor.</b>”</blockquote>
+          </div>
+          <p class="dish__meta"><span>Olga B.</span><span class="tally">In 5 reviews</span></p>
+        </li>
+        <li class="dish reveal" style="--d:2">
+          <span class="dish__n">03</span>
+          <div>
+            <h3>Freshly made doughnuts</h3>
+            <blockquote>“…<b>very soft and airy/spongey,</b> super with a cup of coffee on the side.”</blockquote>
+          </div>
+          <p class="dish__meta"><span>Matas S.</span></p>
+        </li>
+        <li class="dish reveal" style="--d:3">
+          <span class="dish__n">04</span>
+          <div>
+            <h3>Coffee</h3>
+            <blockquote>“And the coffee. <b>The coffee is dangerously addictive.</b>”</blockquote>
+          </div>
+          <p class="dish__meta"><span>Olga B.</span></p>
+        </li>
+        <li class="dish reveal" style="--d:4">
+          <span class="dish__n">05</span>
+          <div>
+            <h3>Borsch, pasties, brownies</h3>
+            <blockquote>Each one named by regulars in their Google reviews. Ask at the counter what’s on today.</blockquote>
+          </div>
+          <p class="dish__meta"><span>Google reviews</span></p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- DOUGHNUTS: full-bleed photo + overlapping panel -->
+  <section class="feature" aria-labelledby="feature-title">
+    <div class="grid">
+      <div class="feature__img clip parallax">
+        <img src="assets/photos/photo-02.jpg" width="1200" height="1600" loading="lazy" decoding="async" alt="Three sugar-dusted doughnuts on a white plate at Irinos Cafe">
+      </div>
+      <div class="feature__panel reveal">
+        <span class="label">With your coffee</span>
+        <h2 id="feature-title">Doughnuts, made <em>fresh.</em></h2>
+        <blockquote>“Their freshly made doughnuts were fabulous too - very soft and airy/spongey, super with a cup of coffee on the side.”</blockquote>
+        <div class="cite"><span class="rs" aria-label="5 out of 5">★★★★★</span><span>Matas S.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ROOM -->
+  <section class="room" id="room" aria-labelledby="room-title">
+    <div class="wrap grid">
+      <div class="room__text">
+        <span class="label reveal">The room</span>
+        <h2 id="room-title" class="reveal">Come for a wrap. Stay for a game of <em>Mafia.</em></h2>
+        <figure class="pull reveal" style="margin-inline:0">
+          <blockquote>“…for the aromatic, very tasty high-quality coffee, for the donuts, and for giving us a warm welcome to play Mafia and more more more.”</blockquote>
+          <figcaption class="cite"><span class="rs" aria-label="5 out of 5">★★★★★</span><span>Larissa J.</span></figcaption>
+        </figure>
+        <figure class="room__aside reveal" style="margin-inline:0;margin-bottom:0">
+          <blockquote>“I enjoy the atmosphere - warm and welcoming with great vibes and genuine kindness from the cafe owners.”</blockquote>
+          <figcaption class="cite"><span class="rs" aria-label="5 out of 5">★★★★★</span><span>Olga B.</span></figcaption>
+        </figure>
+      </div>
+      <figure class="room__img" style="margin-inline:0;margin-bottom:0">
+        <div class="frame clip">
+          <img src="assets/photos/photo-04.jpg" width="1200" height="1600" loading="lazy" decoding="async" alt="Inside Irinos Cafe: wooden tables, Edison bulbs and the menu boards for desserts, coffee, soups, fries and kebabs above the counter">
+        </div>
+        <figcaption class="caption"><i>The counter, under the bulbs.</i><span>Eat in or take away</span></figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- VISIT -->
+  <section class="visit" id="visit" aria-labelledby="visit-title">
+    <div class="wrap grid">
+      <div class="visit__info">
+        <span class="label reveal">Hours &amp; map</span>
+        <h2 id="visit-title" class="reveal">Find us at No.&nbsp;37, Kettering Road.</h2>
+        <div class="now reveal" data-status aria-live="polite">
+          <span class="dot"></span>
+          <div><strong data-status-big>Tuesday to Sunday</strong><small data-status-sub>Closed on Mondays</small></div>
+        </div>
+        <table class="hours reveal">
+          <caption class="sr-only">Opening hours</caption>
+          <tbody>
+            <tr data-day="monday" class="is-closed"><th scope="row">Monday</th><td>Closed</td></tr>
+            <tr data-day="tuesday"><th scope="row">Tuesday</th><td>9am – 6:30pm</td></tr>
+            <tr data-day="wednesday"><th scope="row">Wednesday</th><td>9am – 7pm</td></tr>
+            <tr data-day="thursday"><th scope="row">Thursday</th><td>9am – 7pm</td></tr>
+            <tr data-day="friday"><th scope="row">Friday</th><td>9am – 7pm</td></tr>
+            <tr data-day="saturday"><th scope="row">Saturday</th><td>9am – 7pm</td></tr>
+            <tr data-day="sunday"><th scope="row">Sunday</th><td>10am – 6pm</td></tr>
+          </tbody>
+        </table>
+        <address class="address reveal">37 Kettering Rd,<br>Northampton NN1 4AJ</address>
+        <div class="visit__actions reveal">
+          <a class="btn btn--brand" href="https://www.google.com/maps/dir/?api=1&amp;destination=Irinos%20Cafe%2C%2037%20Kettering%20Rd%2C%20Northampton%2C%20NN1%204AJ" target="_blank" rel="noopener"><svg class="icon"><use href="#i-pin"/></svg>Directions</a>
+          <a class="btn btn--ghost" href="tel:+447586909760"><svg class="icon"><use href="#i-phone"/></svg>Call</a>
+        </div>
+      </div>
+      <div class="map reveal">
+        <div class="map__frame">
+          <iframe src="https://www.google.com/maps?q=Irinos%20Cafe%2C%2037%20Kettering%20Rd%2C%20Northampton%2C%20NN1%204AJ&amp;output=embed" title="Map showing Irinos Cafe at 37 Kettering Rd, Northampton" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+        <a class="map__fallback link" href="https://www.google.com/maps/place/?q=place_id:ChIJjY0Z_s8Od0gRwtRq74E4hi8" target="_blank" rel="noopener">Open in Google Maps</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact on-dark" id="contact" aria-labelledby="contact-title">
+    <div class="wrap grid">
+      <div class="contact__text reveal">
+        <span class="label">Order &amp; contact</span>
+        <h2 id="contact-title">Call, text, or just <em>walk in.</em></h2>
+        <p class="lede">Ring the café for a collection order, or send a text. For delivery, Irinos Cafe is on Just Eat and Uber&nbsp;Eats.</p>
+        <a class="tel-big" href="tel:+447586909760">07586 909760</a>
+      </div>
+      <div class="contact__actions reveal" style="--d:1">
+        <a class="btn btn--brand" href="tel:+447586909760"><span>Call the café</span><svg class="icon"><use href="#i-phone"/></svg></a>
+        <a class="btn btn--ghost" href="sms:+447586909760?&amp;body=Hello%20Irinos%20Cafe%2C%20I%27d%20like%20to%20place%20an%20order%20for%20collection%2C%20please.%20"><span>Send a text</span><svg class="icon"><use href="#i-text"/></svg></a>
+        <a class="btn btn--ghost" href="https://www.ubereats.com/gb/store/irinos-cafe/zi7cksJVRL6LPHQ_bnAMZw" target="_blank" rel="noopener"><span>Order on Uber Eats</span><svg class="icon icon--arrow"><use href="#i-arrow"/></svg></a>
+        <a class="btn btn--ghost" href="http://www.facebook.com/irinoscafe" target="_blank" rel="noopener"><span>Follow on Facebook</span><svg class="icon"><use href="#i-fb"/></svg></a>
+      </div>
+      <p class="order-note">Reviews are quoted word for word from Google, trimmed where marked “…”. Rating and review count as shown on Google Maps.</p>
+    </div>
+  </section>
+</main>
+
+<footer class="footer on-dark">
+  <div class="wrap">
+    <a class="wordmark" href="#top" aria-label="Irinos Cafe, back to top"><b>Irinos<i>.</i></b><span>Cafe · NN1</span></a>
+    <span>37 Kettering Rd, Northampton NN1 4AJ</span>
+    <span>© <span data-year></span> Irinos Cafe</span>
+    <a class="social" href="http://www.facebook.com/irinoscafe" target="_blank" rel="noopener" aria-label="Irinos Cafe on Facebook"><svg class="icon"><use href="#i-fb"/></svg></a>
+  </div>
+</footer>
+
+<nav class="actionbar" aria-label="Quick actions">
+  <a href="tel:+447586909760"><svg class="icon"><use href="#i-phone"/></svg>Call</a>
+  <a href="sms:+447586909760?&amp;body=Hello%20Irinos%20Cafe%2C%20I%27d%20like%20to%20place%20an%20order%20for%20collection%2C%20please.%20"><svg class="icon"><use href="#i-text"/></svg>Text</a>
+  <a href="https://www.google.com/maps/dir/?api=1&amp;destination=Irinos%20Cafe%2C%2037%20Kettering%20Rd%2C%20Northampton%2C%20NN1%204AJ" target="_blank" rel="noopener"><svg class="icon"><use href="#i-pin"/></svg>Directions</a>
+</nav>
+<!--sf:preview--><div style="padding:18px 16px;font:13px/1.5 system-ui,-apple-system,Segoe UI,Roboto,sans-serif;text-align:center;background:#0f0f10;color:#a3a3a8">Preview made by Aymen Jallouli for Irinos Cafe: this is not yet the business's official website.</div><!--/sf:preview-->
+<!--sf:track--><script>(function(){try{var q=new URLSearchParams(location.search),r=q.get('r')||sessionStorage.getItem('sf_r');if(!r)return;sessionStorage.setItem('sf_r',r);navigator.sendBeacon("https://track.aymenjallouli.dev/t"+'?r='+encodeURIComponent(r)+'&p='+encodeURIComponent(location.pathname));}catch(e){}})();</script><!--/sf:track-->
+</body>
+</html>
